@@ -1,0 +1,1 @@
+const double kSquarePadding = 4.0;
