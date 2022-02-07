@@ -27,13 +27,6 @@ class GeserBlocStateInit extends GeserBlocState{
   List<Object?> get props => [repository];
 }
 
-class GeserBlocStateRandoming extends GeserBlocState{
-  const GeserBlocStateRandoming(GeserBlocRepository repository) : super(repository);
-
-  @override
-  List<Object?> get props => [repository];
-}
-
 class GeserBlocStateRandomized extends GeserBlocState{
   const GeserBlocStateRandomized(GeserBlocRepository repository) : super(repository);
 
@@ -43,13 +36,6 @@ class GeserBlocStateRandomized extends GeserBlocState{
 
 class GeserBlocStateDipindahSuccess extends GeserBlocState{
   const GeserBlocStateDipindahSuccess(GeserBlocRepository repository) : super(repository);
-
-  @override
-  List<Object?> get props => [repository];
-}
-
-class GeserBlocStateDipindahWarning extends GeserBlocState{
-  const GeserBlocStateDipindahWarning(GeserBlocRepository repository) : super(repository);
 
   @override
   List<Object?> get props => [repository];

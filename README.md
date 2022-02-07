@@ -1,3 +1,3 @@
-# Shuffle Game
+# Slide Game
 
-![Shuffle](media/shuffle_game.gif)
+![Slide](media/shuffle_game.gif)

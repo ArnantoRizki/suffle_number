@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'geser_bloc_event.dart';
 import 'geser_bloc_repository.dart';
 import 'geser_bloc_state.dart';
-import 'dart:math' as math;
 
 export 'geser_bloc_event.dart';
 export 'geser_bloc_repository.dart';
@@ -13,11 +12,6 @@ export 'geser_bloc_state.dart';
 class GeserBloc extends Bloc<GeserBlocEvent, GeserBlocState>{
   GeserBloc() : super(GeserBlocStateInit()){
     on<GeserBlocEventRandomize>((event, emit) {
-      emit(GeserBlocStateRandoming(
-        state.repository
-      ));
-      
-
       emit(GeserBlocStateRandomized(
         state.repository.copyWith(
           squares: GeserBlocRepository.randomizer()
