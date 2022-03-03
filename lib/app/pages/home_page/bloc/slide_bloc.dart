@@ -1,12 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geser/app/utils/randomizer.dart';
 import 'slide_bloc_event.dart';
 import 'slide_bloc_state.dart';
 import '../models/square_model.dart';
 
 export 'slide_bloc_event.dart';
 export 'slide_bloc_state.dart';
-
-
 
 class SlideBloc extends Bloc<SlideBlocEvent, SlideBlocState>{
   SlideBloc() : super(SlideBlocState(
@@ -21,7 +20,7 @@ class SlideBloc extends Bloc<SlideBlocEvent, SlideBlocState>{
   ))  {
     on<SlideBlocEventRandomize>((event, emit) {
       emit(state.copyWith(
-        squares: SlideBlocState.randomizer()
+        squares: randomizer()
       ));
     });
 
@@ -43,5 +42,6 @@ class SlideBloc extends Bloc<SlideBlocEvent, SlideBlocState>{
         squares: List<SquareModel>.from(_squares)
       ));
     });
-  } 
+  }
 }
+
