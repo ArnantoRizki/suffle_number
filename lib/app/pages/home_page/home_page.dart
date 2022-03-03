@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/slide_bloc.dart';
 import 'home_board.dart';
 import 'home_button.dart';
-import '../../blocs/geser_bloc/geser_bloc.dart';
+
 
 
 class HomePage extends StatelessWidget {
@@ -10,8 +11,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<GeserBloc>(
-      create: (context) => GeserBloc(),
+    return BlocProvider<SlideBloc>(
+      create: (context) => SlideBloc(),
       child: const HomePageView(),
     );
   }
@@ -27,7 +28,7 @@ class HomePageView extends StatefulWidget {
 class _HomePageViewState extends State<HomePageView> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GeserBloc, GeserBlocState>(
+    return BlocBuilder<SlideBloc, SlideBlocState>(
       builder: (context, state){
         return Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
@@ -39,9 +40,9 @@ class _HomePageViewState extends State<HomePageView> {
                 const Spacer(),
 
                 HomeBoard(
-                  squares: state.repository.squares,
+                  squares: state.squares,
                   onTapSquare: (square){
-                    BlocProvider.of<GeserBloc>(context).add(GeserBlocEventPindah(square));
+                    BlocProvider.of<SlideBloc>(context).add(SlideBlocEventMove(square));
                   },
                 ),
 
@@ -49,7 +50,7 @@ class _HomePageViewState extends State<HomePageView> {
 
                 HomeButton(
                   onTap: (){
-                    BlocProvider.of<GeserBloc>(context).add(GeserBlocEventRandomize());
+                    BlocProvider.of<SlideBloc>(context).add(SlideBlocEventRandomize());
                   },
                 ),
 

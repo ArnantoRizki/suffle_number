@@ -1,18 +1,19 @@
 import 'dart:math';
+import '../models/square_model.dart';
 
 
-class GeserBlocRepository{
+class SlideBlocState {
   final List<SquareModel> squares;
   final int emptySlot;
 
-  GeserBlocRepository({
+  const SlideBlocState({
     required this.squares,
     required this.emptySlot
   });
 
-  GeserBlocRepository copyWith({
+  SlideBlocState copyWith({
     List<SquareModel>? squares,
-  }) => GeserBlocRepository(
+  }) => SlideBlocState(
     squares: squares ?? this.squares,
     emptySlot: emptySlotOnRandom(squares ?? this.squares)
   );
@@ -70,16 +71,4 @@ class GeserBlocRepository{
 
     return 36 - count;
   }
-}
-
-class SquareModel{
-  final int indexReal;
-  final int indexCurrent;
-  final int show;
-
-  SquareModel({
-    required this.indexReal,
-    required this.indexCurrent,
-    required this.show
-  });
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_square.dart';
-import '../../blocs/geser_bloc/geser_bloc.dart';
 import '../../constants/const_size.dart' as const_size;
 import '../../configs/size_config.dart';
+import 'models/square_model.dart';
 
 
 class HomeBoard extends StatelessWidget {
